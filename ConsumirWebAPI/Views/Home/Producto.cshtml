@@ -1,0 +1,51 @@
+﻿@model Producto
+@{
+    ViewData["Title"] = "Producto";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Producto</h1>
+<div class="card">
+  <div class="card-header">
+    @ViewBag.Accion
+  </div>
+  <div class="card-body">
+    
+      <form asp-action="GuardarCambios" asp-controller="Home" method="post">
+            
+          <input asp-for="idProducto" type="hidden"/>
+
+          <div class="mb-2">
+              <label class="form-label">Codigo Barra</label>
+              <input type="text" class="form-control form-control-sm" asp-for="codigoBarra" />
+          </div>
+
+          <div class="mb-2">
+              <label class="form-label">Nombre</label>
+              <input type="text" class="form-control form-control-sm" asp-for="nombre" />
+          </div>
+
+          <div class="mb-2">
+              <label class="form-label">Marca</label>
+              <input type="text" class="form-control form-control-sm" asp-for="marca" />
+          </div>
+
+          <div class="mb-2">
+              <label class="form-label">Categoria</label>
+              <input type="text" class="form-control form-control-sm" asp-for="categoria" />
+          </div>
+
+          <div class="mb-2">
+              <label class="form-label">Precio</label>
+              <input type="text" class="form-control form-control-sm" asp-for="precio" />
+          </div>
+
+          <button type="submit" class="btn btn-success btn-sm">Guardar Cambios</button>
+
+         <a asp-action="Index" asp-controller="Home" class="btn btn-warning btn-sm">Volver a la Lista</a>
+      </form>
+
+      <hr />
+
+  </div>
+</div>

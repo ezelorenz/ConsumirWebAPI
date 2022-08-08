@@ -29,7 +29,7 @@ namespace ConsumirWebAPI.Controllers
             if(idProducto != 0)
             {
                 modelo_producto = await _servicio_API.Obtener(idProducto);
-                ViewBag.Accion = "Nuevo Producto";
+                ViewBag.Accion = "Editar Producto";
             }
 
             return View(modelo_producto);
